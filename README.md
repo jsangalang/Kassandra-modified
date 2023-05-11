@@ -10,5 +10,5 @@ The initial command line implementation in their Github repository was missing s
 2. Download training data from BostonGene's website (https://science.bostongene.com/kassandra/downloads). The training data for Kassandra are both *Collection of 9056 bulk RNA-seq samples from 505 datasets of sorted cells, cancer cells and cell lines* and *348 bulk RNA-seq samples of sorted cell populations (including 343 samples of cells from the blood)* >> i.e., 4 files in total.
    I placed these in a directory called "training_data" 
 3. Modify the "kassandra_model_training_example.py" to change the **location + name of your input data**, and the **location + name of the resulting output data**. *Note*: The input data **MUST** be the transcript TPM results from running kallisto.
-4. Modify the "kassandra_model_training_example.sh" to change parameters to run on your HPC.
+4. Modify the "kassandra_model_training_example.sh" to change parameters to run on your HPC, such as changing SBATCH parameters and location of your conda bin.
 5. Run the "kassandra_model_training_example.sh". If using sbatch, I run it with `sbatch kassandra_model_training_example.sh`
