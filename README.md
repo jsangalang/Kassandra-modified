@@ -3,7 +3,14 @@ This is a modified version of the Kassandra model, based initially by the paper 
 
 Zaitsev A, Chelushkin M, Dyikanov D, Cheremushkin I, Shpak B, Nomie K, Zyrin V, Nuzhdina E, Lozinsky Y, Zotova A, Degryse S, Kotlov N, Baisangurov A, Shatsky V, Afenteva D, Kuznetsov A, Paul SR, Davies DL, Reeves PM, Lanuti M, Goldberg MF, Tazearslan C, Chasse M, Wang I, Abdou M, Aslanian SM, Andrewes S, Hsieh JJ, Ramachandran A, Lyu Y, Galkin I, Svekolkin V, Cerchietti L, Poznansky MC, Ataullakhanov R, Fowler N, Bagaev A. Precise reconstruction of the TME using bulk RNA-seq and a machine learning algorithm trained on artificial transcriptomes. Cancer Cell. 2022 Aug 8;40(8):879-894.e16. doi: 10.1016/j.ccell.2022.07.006. PMID: 35944503.
 
-The initial command line implementation in their Github repository was missing some information. Therefore, I tried my modified version of their code.
+The initial command line implementation in BostonGene/Kassandra repository was missing some information. Therefore, I tried my modified version of their code.
+
+The issues namely in their code were:
+| No.  | Issue | Fix |
+| -----|--------------|-------------|
+| 1    | `cell_types.yaml` includes `Dendritic_cells` and `Granulocytes`, however they are not included in the training datasets. | Updated `cell_types.yaml` to remove these cell types. **However**, because of this, they are no longer included in the deconvolution. |
+| 2    | The Python code does not separate the training data into cancer and normal cells, causing errors when running the code | Added some line sof script in the Python code to separate cancer and normal cells. |
+| 3    | Some errors in the `change_subtype_proportions` function of `core/mixer.py` | Changed `specified_subtypes = set(self.proportions.dropna().index).intersection(cell_subtypes)` to `specified_subtypes = list(set(self.proportions.dropna().index).intersection(cell_subtypes))` |
 
 ## Instructions:
 1. Create conda environment using the environment.yaml: `conda env create -f environment.yaml`
