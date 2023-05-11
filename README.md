@@ -9,7 +9,7 @@ The issues namely in their code were:
 | No.  | Issue | Fix |
 | -----|--------------|-------------|
 | 1    | `cell_types.yaml` includes `Dendritic_cells` and `Granulocytes`, however they are not included in the training datasets. | Updated `cell_types.yaml` to remove these cell types. **However**, because of this, they are no longer included in the deconvolution. |
-| 2    | The Python code does not separate the training data into cancer and normal cells, causing errors when running the code | Added some line sof script in the Python code to separate cancer and normal cells. |
+| 2    | The Python code does not separate the training data into cancer and normal cells, causing errors when running the code | Added some lines of script in the Python code to separate cancer and normal cells. |
 | 3    | Some errors in the `change_subtype_proportions` function of `core/mixer.py` | Changed `specified_subtypes = set(self.proportions.dropna().index).intersection(cell_subtypes)` to `specified_subtypes = list(set(self.proportions.dropna().index).intersection(cell_subtypes))` |
 
 ## Instructions:
