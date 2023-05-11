@@ -14,6 +14,8 @@ The issues namely in their code were:
 | 2    | The Python code does not separate the training data into cancer and normal cells, causing errors when running the code | Added some lines of script in the Python code to separate cancer and normal cells. |
 | 3    | Some errors in the `change_subtype_proportions` function of `core/mixer.py` | Changed `specified_subtypes = set(self.proportions.dropna().index).intersection(cell_subtypes)` to `specified_subtypes = list(set(self.proportions.dropna().index).intersection(cell_subtypes))` |
 
+**NOTE:** I've only used this for the tumor model, so I don't know how this would work for the full blood model. 
+
 ## Instructions:
 1. Create conda environment using the environment.yaml: `conda env create -f environment.yaml`
 2. Download training data from BostonGene's website (https://science.bostongene.com/kassandra/downloads). The training data for Kassandra are both *Collection of 9056 bulk RNA-seq samples from 505 datasets of sorted cells, cancer cells and cell lines* and *348 bulk RNA-seq samples of sorted cell populations (including 343 samples of cells from the blood)* >> i.e., 4 files in total.
