@@ -1,11 +1,11 @@
 # Modified Kassandra model
-This is a modified version of the Kassandra deconvolution model, based initially by the paper by Zaitsev et al., 2022:
+This is a modified version of the Kassandra RNA-seq deconvolution model, based initially on the paper by Zaitsev et al., 2022:
 
 Zaitsev A, Chelushkin M, Dyikanov D, Cheremushkin I, Shpak B, Nomie K, Zyrin V, Nuzhdina E, Lozinsky Y, Zotova A, Degryse S, Kotlov N, Baisangurov A, Shatsky V, Afenteva D, Kuznetsov A, Paul SR, Davies DL, Reeves PM, Lanuti M, Goldberg MF, Tazearslan C, Chasse M, Wang I, Abdou M, Aslanian SM, Andrewes S, Hsieh JJ, Ramachandran A, Lyu Y, Galkin I, Svekolkin V, Cerchietti L, Poznansky MC, Ataullakhanov R, Fowler N, Bagaev A. Precise reconstruction of the TME using bulk RNA-seq and a machine learning algorithm trained on artificial transcriptomes. Cancer Cell. 2022 Aug 8;40(8):879-894.e16. doi: 10.1016/j.ccell.2022.07.006. PMID: 35944503.
 
 The initial command line implementation in BostonGene/Kassandra repository was missing some information. Therefore, I tried my modified version of their code.
 
-All original code is written by BostonGene, the authors and their collaborators. This is only a mere modification to their code, since no one has been updating/replying to issues in their Github since 2021.
+All original code is written by BostonGene, the authors and their collaborators. I do not claim any ownership of their code or implementation. This is only a mere modification to their code, since no one has been updating/replying to issues in their Github since 2021.
 
 The issues namely in their code were:
 | No.  | Issue | Fix |
